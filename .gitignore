@@ -8,6 +8,7 @@
 # Python
 .env
 .venv
+env/
 .pytest_cache
 .python-version
 __pycache__
