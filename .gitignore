@@ -1,5 +1,8 @@
 # Ape stuff
 .build/
+!.build/abi/
+!.build/abi/MyNFT.json
+
 .cache/
 
 # Python
