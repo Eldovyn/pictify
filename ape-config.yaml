@@ -1,0 +1,52 @@
+name: MintNFT
+
+etherscan:
+  ethereum:
+    sepolia:
+      uri: https://sepolia.etherscan.io
+      api_uri: https://api.etherscan.io/v2/api?chainid=11155111
+
+compile:
+  output_extra:
+    - ABI
+
+solidity:
+  version: 0.8.27
+  evm_version: shanghai
+  import_remapping:
+    - "@openzeppelin=OpenZeppelin/5.0.0"
+
+dependencies:
+  - name: OpenZeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 5.0.0
+
+networks:
+  custom:
+    - name: ganache_local
+      chain_id: 1337
+      ecosystem: ethereum
+      base_ecosystem_plugin: ethereum
+      default_provider: node
+    - name: hardhat_local
+      chain_id: 31337
+      ecosystem: ethereum
+      base_ecosystem_plugin: ethereum
+      default_provider: node
+    - name: mezame
+      chain_id: 8119
+      ecosystem: shardeum
+      base_ecosystem_plugin: ethereum
+      default_provider: node
+
+node:
+  ethereum:
+    ganache_local:
+      uri: http://127.0.0.1:7545
+    hardhat_local:
+      uri: http://127.0.0.1:8545
+    sepolia:
+      uri: https://ethereum-sepolia-rpc.publicnode.com
+  shardeum:
+    mezame:
+      uri: https://api-mezame.shardeum.org

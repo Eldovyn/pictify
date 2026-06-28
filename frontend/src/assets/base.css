@@ -1,0 +1,5 @@
+/* Minimal reset — Tailwind handles the rest */
+*, *::before, *::after { box-sizing: border-box; }
+img, video { max-width: 100%; display: block; }
+input, button, textarea, select { font: inherit; }
+a { text-decoration: none; }
