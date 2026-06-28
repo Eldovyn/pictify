@@ -1,11 +1,6 @@
-// Pinata API Keys dibaca dari .env (Vite: semua env var harus prefix VITE_)
-// Setup:
-//   1. Copy .env.example → .env
-//   2. Isi VITE_PINATA_API_KEY dan VITE_PINATA_SECRET_API_KEY dari https://app.pinata.cloud/keys
-
 import axios from 'axios'
 
-const key    = import.meta.env.VITE_PINATA_API_KEY
+const key = import.meta.env.VITE_PINATA_API_KEY
 const secret = import.meta.env.VITE_PINATA_SECRET_API_KEY
 
 if (!key || !secret) {
