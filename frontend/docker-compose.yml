@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pictify-frontend
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    
+    # -------------------------------------------------------------
+    # Konfigurasi alternatif untuk Development Mode (Live Reloading)
+    # -------------------------------------------------------------
+    # Jika Anda ingin menjalankan server development (bun run dev),
+    # beri komentar (comment) pada konfigurasi `build`, `container_name`, 
+    # dan `ports` di atas, lalu hapus komentar (uncomment) pada blok di bawah ini:
+    
+    # image: oven/bun:1-alpine
+    # container_name: pictify-frontend-dev
+    # working_dir: /app
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
+    # command: /bin/sh -c "bun install && bun run dev --host 0.0.0.0"
+    # ports:
+    #   - "5173:5173"
